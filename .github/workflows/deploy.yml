@@ -1,0 +1,15 @@
+name: Deploy to Cloudflare Pages
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 5c689c2814e69c8d25e3732c7b88d3f7
+          command: pages deploy site --project-name=fish-date --branch=main --commit-dirty=true
