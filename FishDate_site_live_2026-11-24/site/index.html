@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fish Date | Local fish want to meet you</title>
+<meta name="description" content="They're single, they're lonely, and their lakes are drying up. Fish Date is a self-funded awareness project from Heretic about America's lakes losing water, and how to help.">
+<meta name="theme-color" content="#1F4E9E">
+<meta name="color-scheme" content="light">
+
+<link rel="canonical" href="https://www.plentyof.fish/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Fish Date">
+<meta property="og:url" content="https://www.plentyof.fish/">
+<meta property="og:title" content="Fish Date: Local fish want to meet you">
+<meta property="og:description" content="They're single, they're lonely, and their lakes are drying up. A self-funded awareness project from Heretic.">
+<meta property="og:image" content="https://www.plentyof.fish/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Fish Date, a Heretic project. They're single, they're lonely, and their lakes are drying up.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Fish Date: Local fish want to meet you">
+<meta name="twitter:description" content="They're single, they're lonely, and their lakes are drying up. A self-funded awareness project from Heretic.">
+<meta name="twitter:image" content="https://www.plentyof.fish/assets/og-image.jpg">
+
+<style>
+/* Fish Date. Built like a 2003 dating site: one 760px column,
+   system fonts, flat panels, real tables. No web fonts, no trackers. */
+
+:root {
+  --page:    #D9E2F0;
+  --white:   #FFFFFF;
+  --tint:    #EEF2F9;
+  --line:    #B4C1D9;
+  --blue:    #1F4E9E;
+  --blue-dk: #163A78;
+  --link:    #1A47A8;
+  --lake:    #0F5566;
+  --ink:     #2C2B1E;
+  --muted:   #5C5B4C;
+  --yellow:  #FFBA24;
+  --yel-dk:  #B98208;
+  --red:     #C4261D;
+  --green:   #1F7A35;
+  --pink:    #FF6F9C;
+
+  --body: Verdana, Geneva, Tahoma, sans-serif;
+  --head: "Trebuchet MS", "Lucida Grande", Verdana, sans-serif;
+  --ui:   Tahoma, Verdana, Geneva, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--link); }
+a:visited { color: #5B2D8E; }
+:focus-visible { outline: 3px solid var(--yellow); outline-offset: 1px; }
+h1, h2 { font-family: var(--head); font-weight: bold; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+
+.site { max-width: 760px; margin: 0 auto; background: var(--white); min-height: 100vh; }
+@media (min-width: 780px) {
+  .site { border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+}
+
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--yellow); color: var(--ink); padding: 6px 10px; z-index: 99; }
+.skip:focus { left: 8px; }
+
+/* ---------- header ---------- */
+
+.masthead {
+  background: var(--blue);
+  border-bottom: 3px solid var(--blue-dk);
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 14px;
+}
+.logo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic; font-weight: bold; font-size: 28px; line-height: 1;
+  color: var(--white); text-decoration: none; white-space: nowrap;
+  text-shadow: 1px 1px 0 rgba(0,0,0,.35);
+}
+.logo:visited { color: var(--white); }
+.logo .h { font-style: normal; color: var(--pink); font-size: .8em; padding: 0 2px; vertical-align: 2px; }
+.logo .d { font-style: normal; color: #9FD3FF; }
+
+.heretic {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: #DCE6FA; text-decoration: none; white-space: nowrap;
+  font-family: var(--ui); font-size: 12px; line-height: 1;
+}
+.heretic:visited { color: #DCE6FA; }
+.heretic:hover { color: var(--white); }
+.heretic img { width: 72px; height: auto; }
+
+.nav {
+  background: var(--tint); border-bottom: 1px solid var(--line);
+  padding: 7px 14px; font-family: var(--ui); font-size: 13px;
+  display: flex; flex-wrap: wrap; gap: 2px 0;
+}
+.nav a { color: var(--link); padding: 2px 0; }
+.nav a:visited { color: var(--link); }
+.nav span { color: var(--line); padding: 0 8px; }
+@media (max-width: 599px) {
+  .nav { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 8px 18px; align-items: center; }
+  .nav span { display: none; }
+  .nav a.hot { justify-self: start; }
+}
+.nav a.hot {
+  background: var(--yellow); color: var(--ink); border: 1px solid var(--yel-dk);
+  border-radius: 2px; padding: 1px 7px; font-weight: bold; text-decoration: none;
+}
+.nav a.hot:visited { color: var(--ink); }
+.nav a.hot:hover { background: #FFC845; }
+.nav a.hot b {
+  background: var(--red); color: var(--white); font-size: 9px; letter-spacing: .04em;
+  padding: 1px 4px; margin-left: 5px; vertical-align: 1px;
+}
+
+main { padding: 14px 12px 4px; display: grid; gap: 14px; }
+
+/* ---------- panels ---------- */
+
+.panel { border: 1px solid var(--line); scroll-margin-top: 10px; }
+.panel-head {
+  background: var(--blue); color: var(--white);
+  font-family: var(--ui); font-size: 13px; font-weight: bold;
+  padding: 5px 10px;
+  display: flex; justify-content: space-between; gap: 10px; align-items: baseline;
+}
+.panel-head small { font-weight: normal; font-size: 11px; color: #C9D8F2; }
+.panel-body { padding: 16px 14px 18px; display: grid; gap: 14px; }
+.panel.lake .panel-head { background: var(--lake); }
+.panel.lake .panel-head small { color: #B9DCE4; }
+
+h1 { font-size: 30px; line-height: 1.12; color: var(--blue); }
+h2 { font-size: 22px; line-height: 1.2; color: var(--ink); }
+
+.muted { color: var(--muted); font-size: 13px; }
+.online { font-family: var(--ui); font-size: 13px; font-weight: bold; color: var(--green); }
+.online::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-right: 6px; vertical-align: 1px; }
+
+/* ---------- buttons ---------- */
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 44px; padding: 0 18px;
+  font-family: var(--ui); font-size: 15px; font-weight: bold;
+  text-decoration: none; cursor: pointer;
+  border: 1px solid; border-radius: 3px;
+}
+.btn-go { background: var(--yellow); border-color: var(--yel-dk); color: var(--ink); }
+.btn-go:hover { background: #FFC845; }
+.btn-go:visited { color: var(--ink); }
+.btn-alt { background: var(--white); border-color: #8A97B0; color: var(--link); }
+.btn-alt:hover { background: var(--tint); }
+.btn-alt:visited { color: var(--link); }
+.btn[aria-disabled="true"] { background: #F2F2EE; border-color: #C9C9BF; color: #8A897C; cursor: not-allowed; }
+.btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.btns .btn { flex: 1 1 160px; }
+
+/* ---------- profiles ---------- */
+
+.profiles { display: grid; gap: 0; margin: -16px -14px 0; }
+.profile {
+  display: grid; grid-template-columns: 120px 1fr; gap: 12px;
+  padding: 14px; border-bottom: 1px solid var(--line);
+}
+.profile:nth-child(even) { background: #F7F9FC; }
+.photos { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; align-content: start; }
+.photos img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--line); background: var(--tint); }
+.photos .main { grid-column: 1 / -1; }
+.photos .more { grid-column: 1 / -1; font-family: var(--ui); font-size: 11px; color: var(--muted); margin-top: 2px; }
+.profile .name { font-family: var(--ui); font-weight: bold; font-size: 16px; color: var(--link); text-decoration: underline; }
+.profile .facts { font-size: 12px; color: var(--muted); margin: 2px 0 8px; }
+.profile .facts .new { color: var(--white); background: var(--red); font-family: var(--ui); font-weight: bold; font-size: 10px; padding: 1px 5px; margin-left: 4px; }
+.profile .says { font-size: 14px; }
+.profile .says b { font-family: var(--ui); font-size: 12px; color: var(--muted); }
+.profile .btn { margin-top: 10px; min-height: 38px; font-size: 14px; padding: 0 14px; }
+@media (max-width: 359px) {
+  .profile { grid-template-columns: 1fr; }
+}
+.closer { font-family: var(--head); font-weight: bold; font-size: 18px; color: var(--blue); }
+
+/* ---------- lake table ---------- */
+
+.levels { width: 100%; border-collapse: collapse; font-size: 14px; }
+.levels th, .levels td { text-align: left; padding: 9px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.levels thead th { background: var(--tint); font-family: var(--ui); font-size: 12px; color: var(--muted); font-weight: bold; border-top: 1px solid var(--line); }
+.levels td:last-child { font-weight: bold; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.levels .where { display: block; font-size: 12px; color: var(--muted); font-weight: normal; }
+.scroll { overflow-x: auto; }
+
+/* ---------- partners ---------- */
+
+.partners { display: grid; gap: 8px; }
+.partner {
+  display: grid; grid-template-columns: 64px 1fr; gap: 10px 12px; align-items: center;
+  border: 1px dashed var(--line); padding: 10px;
+}
+.partner .logo-slot {
+  width: 64px; height: 48px; background: var(--tint); border: 1px solid var(--line);
+  display: grid; place-items: center; font-family: var(--ui); font-size: 10px; color: var(--muted); text-align: center;
+}
+.partner .btn { grid-column: 1 / -1; min-height: 40px; }
+@media (min-width: 560px) {
+  .partner { grid-template-columns: 64px 1fr auto; }
+  .partner .btn { grid-column: auto; }
+}
+.note { background: #FFFFE1; border: 1px solid #C9C08A; padding: 12px; display: grid; gap: 10px; }
+.status { font-family: var(--ui); font-size: 13px; color: var(--green); font-weight: bold; min-height: 1.2em; }
+
+/* ---------- faq ---------- */
+
+.faq { display: grid; gap: 14px; }
+.faq dt { font-family: var(--ui); font-weight: bold; font-size: 15px; color: var(--blue); }
+.faq dd { margin: 2px 0 0; font-size: 14px; }
+
+/* ---------- footer ---------- */
+
+footer {
+  margin-top: 14px; padding: 14px 14px calc(22px + env(safe-area-inset-bottom));
+  background: var(--tint); border-top: 1px solid var(--line);
+  font-size: 12px; color: var(--muted); display: grid; gap: 8px;
+}
+footer .legal { color: var(--ink); }
+footer .row { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+
+/* ---------- merch ---------- */
+
+.merch-items { display: grid; gap: 8px; grid-template-columns: repeat(3, 1fr); }
+.item { border: 1px dashed var(--line); padding: 8px; display: grid; gap: 8px; align-content: start; }
+.item .slot {
+  aspect-ratio: 1; background: var(--tint); border: 1px solid var(--line);
+  display: grid; place-items: center; text-align: center;
+  font-family: var(--ui); font-size: 11px; color: var(--muted); padding: 6px;
+}
+.item p { font-family: var(--ui); font-size: 13px; color: var(--muted); }
+.item .btn { min-height: 38px; font-size: 14px; padding: 0 8px; }
+
+/* ---------- chat (pre-written, no text input) ---------- */
+
+.scrim { position: fixed; inset: 0; z-index: 50; background: rgba(22,58,120,.5); display: none; align-items: flex-end; justify-content: center; }
+.scrim.open { display: flex; }
+.chat { width: 100%; max-width: 420px; max-height: 92vh; display: flex; flex-direction: column; background: #ECE9D8; border: 1px solid var(--blue-dk); }
+.chat-bar { background: var(--blue); color: var(--white); font-family: var(--ui); font-size: 13px; font-weight: bold; display: flex; align-items: center; gap: 8px; padding: 5px 5px 5px 10px; }
+.chat-bar span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.chat-bar button { width: 32px; height: 28px; background: var(--red); color: var(--white); border: 1px solid #fff; font-family: var(--ui); font-weight: bold; cursor: pointer; }
+.chat-who { display: flex; gap: 10px; align-items: center; padding: 8px 10px; background: var(--white); border-bottom: 1px solid #A8A495; }
+.chat-who img { width: 44px; height: 44px; object-fit: cover; border: 1px solid var(--line); }
+.chat-who .n { font-family: var(--ui); font-weight: bold; font-size: 14px; }
+.log { background: var(--white); margin: 8px; border: 1px solid #A8A495; padding: 10px; min-height: 210px; max-height: 44vh; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; font-family: var(--ui); font-size: 14px; line-height: 1.45; }
+.msg { max-width: 88%; }
+.msg b { display: block; font-size: 12px; }
+.msg.them b { color: var(--red); }
+.msg.me { align-self: flex-end; text-align: right; }
+.msg.me b { color: var(--link); }
+.msg.lake { max-width: 100%; align-self: stretch; background: #FFFFE1; border: 1px solid #C9C08A; padding: 10px; }
+.msg.lake .btn { margin-top: 10px; width: 100%; }
+.typing { font-family: var(--ui); font-size: 12px; color: var(--muted); font-style: italic; }
+.replies { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 8px 10px; }
+.replies .btn { flex: 1 1 140px; min-height: 42px; font-size: 14px; }
+.chat-foot { font-family: var(--ui); font-size: 11px; color: var(--muted); padding: 7px 10px calc(9px + env(safe-area-inset-bottom)); border-top: 1px solid #C9C5B4; }
+
+@media (min-width: 600px) {
+  main { padding: 16px 16px 4px; }
+  .panel-body { padding: 18px 18px 20px; }
+  .profiles { margin: -18px -18px 0; }
+  .profile { grid-template-columns: 170px 1fr; padding: 16px 18px; }
+  h1 { font-size: 36px; }
+  h2 { font-size: 24px; }
+  .btns .btn { flex: 0 0 auto; }
+  .scrim { align-items: center; padding: 20px; }
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<div class="site">
+
+<header>
+  <div class="masthead">
+    <a class="logo" href="#top" aria-label="Fish Date, home">Fish<span class="h" aria-hidden="true">&#9829;</span><span class="d">Date</span></a>
+    <a class="heretic" href="https://heretic.wtf" target="_blank" rel="noopener" aria-label="A Heretic project">A <img src="assets/heretic-logo.png" alt="" width="180" height="67"> project</a>
+  </div>
+  <nav class="nav" aria-label="Sections">
+    <a href="#fish">Meet the fish</a><span aria-hidden="true">|</span>
+    <a href="#catch">The catch</a><span aria-hidden="true">|</span>
+    <a href="#merch" class="hot">Merch <b>NEW</b></a><span aria-hidden="true">|</span>
+    <a href="#help">Help their lake</a><span aria-hidden="true">|</span>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- 1. Hero -->
+  <section class="panel" id="top" aria-labelledby="hero-title">
+    <div class="panel-head">Welcome to Fish Date</div>
+    <div class="panel-body">
+      <p class="online">3 fish near you are online</p>
+      <h1 id="hero-title">Local fish want to meet you.</h1>
+      <p style="font-size:17px">They're single, they're lonely, and their lakes are drying up.</p>
+      <div class="btns">
+        <a class="btn btn-go" href="#fish">Meet the fish</a>
+        <a class="btn btn-alt" href="#help">Help their lake</a>
+      </div>
+      <p class="muted">A self-funded awareness project from <a href="https://heretic.wtf" target="_blank" rel="noopener">Heretic</a>. Not a dating service.</p>
+    </div>
+  </section>
+
+  <!-- 2. Meet the fish -->
+  <section class="panel" id="fish" aria-labelledby="fish-title">
+    <div class="panel-head"><span id="fish-title">Meet the fish</span> <small>3 singles in your lake</small></div>
+    <div class="panel-body">
+      <div class="profiles">
+
+        <article class="profile">
+          <div class="photos">
+            <img class="main" src="assets/steve-profile.jpg" alt="Sunfish Steve, a bluegill in a striped tie, posing for a glamour headshot" width="400" height="400" loading="lazy">
+            <img src="assets/steve-lifestyle.jpg" alt="Steve floating under a lily pad in a pond" width="200" height="200" loading="lazy">
+            <img src="assets/steve-bad.jpg" alt="A blurry flash photo of Steve in a white bucket" width="200" height="200" loading="lazy">
+            <span class="more">3 photos</span>
+          </div>
+          <div>
+            <div class="name">Sunfish Steve, 4</div>
+            <div class="facts">Bluegill, shallow water <span class="new">NEW</span></div>
+            <p class="says"><b>Into:</b> long swims, deep water, a nice clip-on tie.<br><b>Looking for:</b> someone who'll stick around.</p>
+            <button class="btn btn-go" type="button" data-chat="steve">Chat now</button>
+          </div>
+        </article>
+
+        <article class="profile">
+          <div class="photos">
+            <img class="main" src="assets/billy-profile.jpg" alt="Big Mouth Billy, a largemouth bass with his mouth wide open, in a glamour headshot" width="400" height="400" loading="lazy">
+            <img src="assets/billy-lifestyle.jpg" alt="Billy leaping out of a lake at sunset" width="200" height="200" loading="lazy">
+            <img src="assets/billy-bad.jpg" alt="An overexposed close-up of Billy's open mouth" width="200" height="200" loading="lazy">
+            <span class="more">3 photos</span>
+          </div>
+          <div>
+            <div class="name">Big Mouth Billy</div>
+            <div class="facts">Largemouth bass, Lake Mead</div>
+            <p class="says">Ur lake or mine? Mine's kinda half empty.</p>
+            <button class="btn btn-go" type="button" data-chat="billy">Chat now</button>
+          </div>
+        </article>
+
+        <article class="profile">
+          <div class="photos">
+            <img class="main" src="assets/pike-profile.jpg" alt="NorthernPike69, a northern pike wearing a gold chain, under red glamour lighting" width="400" height="400" loading="lazy">
+            <img src="assets/pike-lifestyle.jpg" alt="NorthernPike69 lounging in a weed bed underwater" width="200" height="200" loading="lazy">
+            <img src="assets/pike-bad.jpg" alt="A badly framed photo of NorthernPike69 on a dock, with a thumb over the lens" width="200" height="200" loading="lazy">
+            <span class="more">3 photos</span>
+          </div>
+          <div>
+            <div class="name">NorthernPike69</div>
+            <div class="facts">Northern pike, gold chain <span class="new">69 NEW</span></div>
+            <p class="says">Is 300 ft from you. Hot singles in your lake.</p>
+            <button class="btn btn-go" type="button" data-chat="pike">Chat now</button>
+          </div>
+        </article>
+
+      </div>
+      <p class="closer">There are plenty of fish. For now.</p>
+    </div>
+  </section>
+
+  <!-- 3. The catch -->
+  <section class="panel lake" id="catch" aria-labelledby="catch-title">
+    <div class="panel-head">The catch</div>
+    <div class="panel-body">
+      <h2 id="catch-title">Their lakes are running out of water.</h2>
+      <p>Years of drought and more demand than the rivers can supply have drained America's two biggest reservoirs to about a quarter full. When the water drops, the fish lose their homes first.</p>
+
+      <!-- Update these readings and the date below right before launch. -->
+      <div class="scroll">
+        <table class="levels">
+          <thead><tr><th scope="col">Lake</th><th scope="col">Level, Nov 2026</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Lake Mead<span class="where">Nevada and Arizona. Largest reservoir in the U.S.</span></th><td>27% full</td></tr>
+            <tr><th scope="row">Lake Powell<span class="where">Utah and Arizona. Second largest.</span></th><td>27% full</td></tr>
+            <tr><th scope="row">Great Salt Lake<span class="where">Utah. Record low was set in 2022.</span></th><td>1.5 ft above<br>its record low</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="muted">Lake Mead and Lake Powell: <a href="https://www.usbr.gov/lc/region/g4000/hourly/levels.html" target="_blank" rel="noopener">U.S. Bureau of Reclamation</a>. Great Salt Lake: <a href="https://waterdata.usgs.gov/" target="_blank" rel="noopener">USGS</a>.</p>
+
+      <div class="btns"><a class="btn btn-go" href="#help">Help their lake</a></div>
+    </div>
+  </section>
+
+  <!-- 4. Merch (store not chosen yet) -->
+  <section class="panel" id="merch" aria-labelledby="merch-title">
+    <div class="panel-head"><span id="merch-title">Merch</span> <small>Coming soon</small></div>
+    <div class="panel-body">
+      <h2>Fish Date merch is on the way.</h2>
+
+
+      <!--
+        MERCH ITEM. When the store is live, replace one placeholder with either:
+
+        A) Link out to the store (no extra scripts on this site, recommended):
+        <div class="item">
+          <img src="assets/merch-NAME.jpg" alt="PRODUCT NAME" width="400" height="400">
+          <p>PRODUCT NAME &#183; $PRICE</p>
+          <a class="btn btn-go" href="https://STORE-PRODUCT-PAGE" target="_blank" rel="noopener">Shop</a>
+        </div>
+
+        B) A Shopify Buy Button embed: paste Shopify's generated snippet inside
+        <div class="item">...</div>. Note this loads Shopify's scripts on the page,
+        so update the privacy line in the footer and FAQ before it goes live.
+      -->
+      <div class="merch-items">
+        <div class="item"><div class="slot">Coming soon</div><p>Item 1</p><span class="btn" aria-disabled="true">Shop</span></div>
+        <div class="item"><div class="slot">Coming soon</div><p>Item 2</p><span class="btn" aria-disabled="true">Shop</span></div>
+        <div class="item"><div class="slot">Coming soon</div><p>Item 3</p><span class="btn" aria-disabled="true">Shop</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4b. Help their lake -->
+  <section class="panel" id="help" aria-labelledby="help-title">
+    <div class="panel-head">Help their lake</div>
+    <div class="panel-body">
+      <h2 id="help-title">Donate directly to lake and water conservation groups.</h2>
+      <p>Each button goes to the group's own donation page. Fish Date never touches the money.</p>
+
+      <!--
+        PARTNER CARD. When a group says yes, replace one placeholder with:
+
+        <div class="partner">
+          <img src="assets/partner-NAME.svg" alt="GROUP NAME" width="64" height="48">
+          <p>One line on what they do for lakes and water.</p>
+          <a class="btn btn-go" href="https://GROUP-DONATE-PAGE" target="_blank" rel="noopener">Donate</a>
+        </div>
+      -->
+      <div class="partners">
+        <div class="partner"><div class="logo-slot">Partner</div><p class="muted">Lake partner coming soon</p><span class="btn" aria-disabled="true">Donate</span></div>
+        <div class="partner"><div class="logo-slot">Partner</div><p class="muted">Lake partner coming soon</p><span class="btn" aria-disabled="true">Donate</span></div>
+        <div class="partner"><div class="logo-slot">Partner</div><p class="muted">Lake partner coming soon</p><span class="btn" aria-disabled="true">Donate</span></div>
+      </div>
+
+      <div class="note">
+        <p><b>Can't donate?</b> Save water at home, support your local lake group, and share this with a friend. Your local fish thank you.</p>
+        <div class="btns"><button class="btn btn-alt" type="button" id="share">Share Fish Date</button></div>
+        <p class="status" id="status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Who's behind this -->
+  <section class="panel" id="who" aria-labelledby="who-title">
+    <div class="panel-head" id="who-title">Who's behind this</div>
+    <div class="panel-body">
+      <p>Fish Date is a self-funded awareness project from <a href="https://heretic.wtf" target="_blank" rel="noopener">Heretic</a>, a creative studio in Los Angeles. No ads, no data selling, no actual fish dating.</p>
+    </div>
+  </section>
+
+  <!-- 6. FAQ -->
+  <section class="panel" id="faq" aria-labelledby="faq-title">
+    <div class="panel-head" id="faq-title">FAQ</div>
+    <div class="panel-body">
+      <dl class="faq">
+        <div><dt>Is this a dating site?</dt><dd>No. It's a parody about America's lakes losing water. There are no sign-ups, no real people and no matches. Not affiliated with any dating service.</dd></div>
+        <div><dt>Is it affiliated with any dating app?</dt><dd>No. Fish Date is not affiliated with, endorsed by or connected to any dating app or dating service.</dd></div>
+        <div><dt>Where does the money go?</dt><dd>Straight to the lake groups, through their own pages. Fish Date and Heretic never collect or hold donations.</dd></div>
+        <div><dt>Why fish?</dt><dd>"Save the watershed" doesn't stop traffic. A sunfish in a tie does.</dd></div>
+        <div><dt>Is Fish Date a nonprofit?</dt><dd>No. It's a self-funded awareness project from Heretic. Donations go directly to independent nonprofits.</dd></div>
+        <div><dt>Do you collect my information?</dt><dd>No. This site has no forms, no accounts and no trackers. The fish chats are pre-written, and nothing you tap is saved.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<!-- 7. Footer -->
+<footer>
+  <p class="legal">Fish Date is a <a href="https://heretic.wtf" target="_blank" rel="noopener">Heretic</a> project. Not affiliated with any dating service. Donations go directly to independent nonprofits. Privacy: we don't collect personal data.</p>
+  <div class="row"><span>&#169; 2026 Heretic Studios LLC</span><span>www.plentyof.fish</span><span>No fish were harmed. Several were flattered.</span></div>
+</footer>
+
+</div>
+
+<!-- Chat: pre-written, tap-to-reply only. No text input. Nothing is stored or sent. -->
+<div class="scrim" id="scrim" role="dialog" aria-modal="true" aria-labelledby="chat-title" hidden>
+  <div class="chat">
+    <div class="chat-bar"><span id="chat-title">Instant Message</span><button type="button" id="chat-close" aria-label="Close chat">X</button></div>
+    <div class="chat-who"><img id="chat-pic" alt="" width="44" height="44"><div><div class="n" id="chat-name"></div><div class="online">Online now</div></div></div>
+    <div class="log" id="log" aria-live="polite"></div>
+    <div class="replies" id="replies"></div>
+    <div class="chat-foot">Pre-written chat. You're talking to a fish. Nothing you tap is saved.</div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  var CHATS = {
+    steve: {
+      name: "Sunfish Steve", pic: "assets/steve-profile.jpg",
+      steps: [
+        { says: ["hi!! i'm steve!! i'm 4 and i wore my nice tie!!"], replies: ["Nice tie, Steve", "Hey Steve"] },
+        { says: ["thank you!! it's a clip-on.", "i'm on here because the shallow part where i live keeps getting shallower."], replies: ["What's happening to your lake?"] },
+        { says: ["the water's going down. there's been a drought, and people need more water than the rivers can give."],
+          lake: "Could you help my lake? I'd stick around for that." }
+      ]
+    },
+    billy: {
+      name: "Big Mouth Billy", pic: "assets/billy-profile.jpg",
+      steps: [
+        { says: ["ur lake or mine?"], replies: ["Yours", "What's wrong with yours?"] },
+        { says: ["mine's kinda half empty.", "ok more like three quarters empty. lake mead is about a quarter full right now."], replies: ["Wait, that's real?"] },
+        { says: ["yeah. i'm a fish on a website but that part's real."], lake: "Want to help my lake?" }
+      ]
+    },
+    pike: {
+      name: "NorthernPike69", pic: "assets/pike-profile.jpg",
+      steps: [
+        { says: ["IS 300 FT FROM YOU.", "hot singles in your lake. i am one of them."], replies: ["Hi?", "Nice chain"] },
+        { says: ["it's real gold. the lake's not doing as good."], replies: ["What happened to the lake?"] },
+        { says: ["lake powell's about a quarter full. the great salt lake is barely above its lowest ever."], lake: "Help my lake. Then we'll talk." }
+      ]
+    }
+  };
+
+  var scrim = document.getElementById("scrim");
+  var log = document.getElementById("log");
+  var reps = document.getElementById("replies");
+  var closeB = document.getElementById("chat-close");
+  var lastFocus = null, timers = [];
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function later(fn, ms) { timers.push(setTimeout(fn, reduce ? 0 : ms)); }
+  function clearTimers() { timers.forEach(clearTimeout); timers = []; }
+
+  function add(cls, who, text) {
+    var d = document.createElement("div");
+    d.className = "msg " + cls;
+    if (who) { var b = document.createElement("b"); b.textContent = who; d.appendChild(b); }
+    var t = document.createElement("span"); t.textContent = text; d.appendChild(t);
+    log.appendChild(d); log.scrollTop = log.scrollHeight;
+    return d;
+  }
+
+  function play(chat, i) {
+    var step = chat.steps[i], delay = 0;
+    reps.innerHTML = "";
+    step.says.forEach(function (line) {
+      delay += 650 + Math.min(line.length * 14, 1100);
+      var t;
+      later(function () {
+        t = document.createElement("div"); t.className = "typing";
+        t.textContent = chat.name + " is typing...";
+        log.appendChild(t); log.scrollTop = log.scrollHeight;
+      }, delay - 600);
+      later(function () { if (t) t.remove(); add("them", chat.name, line); }, delay);
+    });
+    later(function () {
+      if (step.lake) {
+        var box = add("lake", null, step.lake);
+        var a = document.createElement("a");
+        a.className = "btn btn-go"; a.href = "#help"; a.textContent = "Help their lake";
+        a.addEventListener("click", close);
+        box.appendChild(a);
+        log.scrollTop = log.scrollHeight;
+        a.focus({ preventScroll: true });
+        return;
+      }
+      step.replies.forEach(function (r) {
+        var btn = document.createElement("button");
+        btn.type = "button"; btn.className = "btn btn-alt"; btn.textContent = r;
+        btn.addEventListener("click", function () { reps.innerHTML = ""; add("me", "You", r); play(chat, i + 1); });
+        reps.appendChild(btn);
+      });
+      var first = reps.querySelector("button");
+      if (first) first.focus({ preventScroll: true });
+    }, delay + 200);
+  }
+
+  function open(id) {
+    var chat = CHATS[id]; if (!chat) return;
+    lastFocus = document.activeElement;
+    clearTimers(); log.innerHTML = ""; reps.innerHTML = "";
+    document.getElementById("chat-title").textContent = "Instant Message: " + chat.name;
+    document.getElementById("chat-name").textContent = chat.name;
+    var pic = document.getElementById("chat-pic"); pic.src = chat.pic; pic.alt = chat.name;
+    scrim.hidden = false; scrim.classList.add("open");
+    document.body.style.overflow = "hidden";
+    closeB.focus({ preventScroll: true });
+    play(chat, 0);
+  }
+
+  function close() {
+    clearTimers();
+    scrim.classList.remove("open"); scrim.hidden = true;
+    document.body.style.overflow = "";
+    if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+  }
+
+  document.querySelectorAll("[data-chat]").forEach(function (b) {
+    b.addEventListener("click", function () { open(b.getAttribute("data-chat")); });
+  });
+  closeB.addEventListener("click", close);
+  scrim.addEventListener("click", function (e) { if (e.target === scrim) close(); });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape" && scrim.classList.contains("open")) close(); });
+
+  /* Share: phone share sheet, or copy the link. Nothing is sent to us. */
+  var status = document.getElementById("status");
+  var url = "https://www.plentyof.fish/";
+  document.getElementById("share").addEventListener("click", function () {
+    if (navigator.share) {
+      navigator.share({ title: "Fish Date", text: "Local fish want to meet you. Their lakes are drying up.", url: url }).catch(function () {});
+      return;
+    }
+    var fallback = function () { status.textContent = "Share this link: www.plentyof.fish"; };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(function () { status.textContent = "Link copied. Your local fish thank you."; }, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
