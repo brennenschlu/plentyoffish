@@ -241,7 +241,8 @@ footer .row { display: flex; flex-wrap: wrap; gap: 4px 14px; }
 
 /* ---------- merch ---------- */
 
-.merch-items { display: grid; gap: 8px; grid-template-columns: repeat(3, 1fr); }
+.merch-items { display: grid; gap: 8px; grid-template-columns: repeat(2, 1fr); }
+.item img { width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; border: 1px solid var(--line); background: #fff; }
 .item { border: 1px dashed var(--line); padding: 8px; display: grid; gap: 8px; align-content: start; }
 .item .slot {
   aspect-ratio: 1; background: var(--tint); border: 1px solid var(--line);
@@ -403,11 +404,11 @@ footer .row { display: flex; flex-wrap: wrap; gap: 4px 14px; }
     </div>
   </section>
 
-  <!-- 4. Merch (store not chosen yet) -->
+  <!-- 4. Merch (Shopify: shop.plentyof.fish) -->
   <section class="panel" id="merch" aria-labelledby="merch-title">
-    <div class="panel-head"><span id="merch-title">Merch</span> <small>Coming soon</small></div>
+    <div class="panel-head"><span id="merch-title">Merch</span> <small>New drop</small></div>
     <div class="panel-body">
-      <h2>Fish Date merch is on the way.</h2>
+      <h2>Wear it to the lake.</h2>
 
 
       <!--
@@ -425,9 +426,16 @@ footer .row { display: flex; flex-wrap: wrap; gap: 4px 14px; }
         so update the privacy line in the footer and FAQ before it goes live.
       -->
       <div class="merch-items">
-        <div class="item"><div class="slot">Coming soon</div><p>Item 1</p><span class="btn" aria-disabled="true">Shop</span></div>
-        <div class="item"><div class="slot">Coming soon</div><p>Item 2</p><span class="btn" aria-disabled="true">Shop</span></div>
-        <div class="item"><div class="slot">Coming soon</div><p>Item 3</p><span class="btn" aria-disabled="true">Shop</span></div>
+        <div class="item">
+          <img src="assets/merch-tee.jpg" alt="Lake Water Camo Tee: I'm here to love fish and drink lake water... and we're all outta lake water" width="400" height="400" loading="lazy">
+          <p>Lake Water Camo Tee &#183; $45</p>
+          <a class="btn btn-go" href="https://shop.plentyof.fish/products/lake-water-camo-tee" target="_blank" rel="noopener">Shop</a>
+        </div>
+        <div class="item">
+          <img src="assets/merch-hat.jpg" alt="Women Fear Me Fish Love Me camo trucker hat" width="400" height="400" loading="lazy">
+          <p>Women Fear Me Fish Love Me Trucker &#183; $40</p>
+          <a class="btn btn-go" href="https://shop.plentyof.fish/products/women-fear-me-fish-love-me-trucker-hat" target="_blank" rel="noopener">Shop</a>
+        </div>
       </div>
     </div>
   </section>
